@@ -4,17 +4,48 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Color Scheme Generator</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <input type="color" id="seed-color" />
-    <label for="colorScheme">Select Color Scheme:</label>
-    <select id="colorScheme">
-      <option value="monochrome">Monochrome</option>
-      <option value="analogous">Analogous</option>
-      <option value="complementary">Complementary</option>
-    </select>
-    <button id="get-color-btn">Get Color Schemes</button>
+    <header class="header container">
+      <h1 class="title">Color Matrix</h1>
+      <div class="color-options">
+        <input type="color" id="seed-color" class="seed-color" />
+        <div>
+          <label for="colorScheme">Select Palette:</label>
+          <select id="colorScheme" class="color-scheme">
+            <option value="monochrome">Monochrome</option>
+            <option value="monochrome-dark">Monochrome-dark</option>
+            <option value="monochrome-light">Monochrome-light</option>
+            <option value="analogic">Analogic</option>
+            <option value="complement">Complement</option>
+            <option value="analogic-complement">Analogic-complement</option>
+            <option value="triad">Triad</option>
+            <option value="quad">Quad</option>
+          </select>
+        </div>
+      </div>
+    </header>
+    <div class="container">
+      <div class="color-palette">
+        <div class="color" id="color1"></div>
+        <div class="color" id="color2"></div>
+        <div class="color" id="color3"></div>
+        <div class="color" id="color4"></div>
+        <div class="color" id="color5"></div>
+      </div>
+      <button id="copy-colors-btn" class="copy-colors-btn">Copy Colors</button>
+      
+      <button id="generate-color-btn" class="generate-color-btn">
+        Generate Colors
+      </button>
+    </div>
     <script src="script.js"></script>
   </body>
 </html>

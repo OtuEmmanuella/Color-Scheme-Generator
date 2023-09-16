@@ -1,15 +1,18 @@
 const inputColor = document.getElementById("seed-color")
-const getColorBtn = document.getElementById("get-color-btn")
+const generateColorBtn = document.getElementById("generate-color-btn")
 const colorSchemeSelect = document.getElementById("colorScheme")
+const colorContainers = document.querySelectorAll(".color")
+const copyColorsBtn = document.getElementById("copy-colors-btn");
 
-inputColor.addEventListener("input", function () {
+
+generateColorBtn.addEventListener("click", function () {
   let seedColor = inputColor.value.replace("#", "")
 
   const selectedScheme = colorSchemeSelect.value
   const queryParam = "hex"
 
   console.log("seedColor:", seedColor)
-  //sconsole.log("selectedScheme:", selectedScheme)
+
 
   const options = {
     method: "GET",
@@ -25,7 +28,18 @@ inputColor.addEventListener("input", function () {
   fetch(apiURL, options)
     .then((response) => response.json())
     .then((data) => console.log(data))
-    .catch((error) => {
-      console.error("Error:", error)
-    })
+    
+  .catch((error) => {
+    console.error("Error:", error);
+  })
 })
+
+
+
+
+
+
+
+
+
+
