@@ -1,7 +1,7 @@
 const inputColor = document.getElementById("seed-color")
 const generateColorBtn = document.getElementById("generate-color-btn")
 const colorSchemeSelect = document.getElementById("colorScheme")
-const colorContainers = document.querySelectorAll(".color")
+const colorPaletteContainer = document.getElementById("color-palette-container")
 const copyColorsBtn = document.getElementById("copy-colors-btn");
 
 
@@ -27,7 +27,18 @@ generateColorBtn.addEventListener("click", function () {
 
   fetch(apiURL, options)
     .then((response) => response.json())
-    .then((data) => console.log(data))
+    .then((colors) =>  {
+      console.log(colors)
+      // let html = ``
+      // for (let color of colors) {
+      //    html += `
+      //      <div class="color">
+      //        ${color}
+      //      </div>
+      //    ` 
+      // }
+      // colorPaletteContainer.innerHTML = html
+    })
     
   .catch((error) => {
     console.error("Error:", error);
